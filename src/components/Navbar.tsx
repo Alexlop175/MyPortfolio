@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'; // Para animación
 import { Home, User, Briefcase, FolderKanban, Mail, Menu} from 'lucide-react'; // Íconos
 
 type NavItemProps = {
-  icon: React.ElementType;
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   label: string;
   href: string;
 };
