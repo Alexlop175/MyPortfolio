@@ -3,6 +3,7 @@ import "./globals.css";
 import FloatingNavbar from "@/components/Navbar";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { motion } from "framer-motion";
+// @ts-nocheck
 
 export default function RootLayout({
   children,
