@@ -20,3 +20,6 @@ declare module 'react-typewriter-effect' {
   const Typewriter: React.FC<TypewriterProps>;
   export default Typewriter;
 }
+
+
+declare module 'react-vertical-timeline-component';

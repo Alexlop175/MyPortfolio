@@ -5,34 +5,53 @@ import { FaBriefcase, FaGraduationCap, FaCode } from "react-icons/fa";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
-} from 'react-vertical-timeline-component';
-import 'react-vertical-timeline-component/style.min.css';
+} from "react-vertical-timeline-component";
+import "react-vertical-timeline-component/style.min.css";
+
+interface TimelineItem {
+  type: string;
+  title: string;
+  institution?: string;
+  company?: string;
+  date: string;
+  description: string[];
+  iconBg: string;
+}
+
+interface TimelineCardProps {
+  data: TimelineItem;
+  index: number;
+}
 
 export default function ExperienceAndEducationSection() {
-
-  // Combined and ordered data for a single timeline
-  const timelineData = [
+  const timelineData: TimelineItem[] = [
     {
       type: "education",
       title: "Technical Bachelor Degree in Web Development",
       institution: "COLEGIO TÉCNICO PROFESIONAL DE PAVAS",
       date: "2021 - 2023",
-      description: ["Completed a technical bachelor's degree focused on web development, gaining foundational knowledge in front-end and back-end technologies."],
-      iconBg: "#1F2937", // Dark gray (like card background)
+      description: [
+        "Completed a technical bachelor's degree focused on web development, gaining foundational knowledge in front-end and back-end technologies.",
+      ],
+      iconBg: "#1F2937",
     },
     {
       type: "project",
       title: "Sistema de Votaciones",
       date: "2022",
-      description: ["Implemented an election voting system as part of an educational project, focusing on secure data handling and user authentication."],
-      iconBg: "#008080", // Turquoise
+      description: [
+        "Implemented an election voting system as part of an educational project, focusing on secure data handling and user authentication.",
+      ],
+      iconBg: "#008080",
     },
     {
       type: "experience",
       title: "Frontend Developer (Intern)",
       company: "AUTO MERCADO S.A",
       date: "July 2022",
-      description: ["Gained practical experience in front-end development within a corporate environment, contributing to real-world applications."],
+      description: [
+        "Gained practical experience in front-end development within a corporate environment, contributing to real-world applications.",
+      ],
       iconBg: "#1F2937",
     },
     {
@@ -40,7 +59,9 @@ export default function ExperienceAndEducationSection() {
       title: "Full Stack Developer (Intern)",
       company: "AUTO MERCADO S.A",
       date: "October - December 2023",
-      description: ["Expanded skills to full-stack development, working on both front-end and back-end aspects of projects."],
+      description: [
+        "Expanded skills to full-stack development, working on both front-end and back-end aspects of projects.",
+      ],
       iconBg: "#008080",
     },
     {
@@ -48,61 +69,76 @@ export default function ExperienceAndEducationSection() {
       title: "Software Engineering",
       institution: "UNIVERSIDAD CENFOTEC",
       date: "2024 - Present",
-      description: ["Currently pursuing a degree in Software Engineering, deepening understanding of advanced software development principles and practices."],
+      description: [
+        "Currently pursuing a degree in Software Engineering, deepening understanding of advanced software development principles and practices.",
+      ],
       iconBg: "#008080",
     },
     {
       type: "project",
       title: "Ecosecha",
       date: "C1 2024",
-      description: ["Developed a platform for sustainable farming practices, including features for crop management and environmental monitoring."],
+      description: [
+        "Developed a platform for sustainable farming practices, including features for crop management and environmental monitoring.",
+      ],
       iconBg: "#1F2937",
     },
     {
       type: "project",
       title: "Javafy",
       date: "C2 2024",
-      description: ["Built a Java-based application for [brief description of Javafy's purpose], demonstrating proficiency in backend development with Java."],
+      description: [
+        "Built a Java-based application for [brief description of Javafy's purpose], demonstrating proficiency in backend development with Java.",
+      ],
       iconBg: "#008080",
     },
     {
       type: "project",
       title: "Healthtag",
       date: "C2 2024",
-      description: ["Created a health-focused application to track personal metrics, with a focus on user-friendly interface and data visualization."],
+      description: [
+        "Created a health-focused application to track personal metrics, with a focus on user-friendly interface and data visualization.",
+      ],
       iconBg: "#1F2937",
     },
     {
       type: "project",
       title: "Sistema de Multas de Tráfico (SMT)",
       date: "C3 2024",
-      description: ["Designed and implemented a traffic fine management system, integrating database functionalities for efficient record keeping."],
+      description: [
+        "Designed and implemented a traffic fine management system, integrating database functionalities for efficient record keeping.",
+      ],
       iconBg: "#008080",
     },
     {
       type: "project",
       title: "CenfoScore",
       date: "C1 2025",
-      description: ["Developed a comprehensive scoring system, utilizing modern web technologies for a responsive user interface."],
+      description: [
+        "Developed a comprehensive scoring system, utilizing modern web technologies for a responsive user interface.",
+      ],
       iconBg: "#1F2937",
     },
   ];
 
-  // Component to render a timeline element
-  const TimelineCard = ({ data, index }) => (
+  const TimelineCard: React.FC<TimelineCardProps> = ({ data, index }) => (
     <VerticalTimelineElement
       contentStyle={{
-        background: '#008080',
-        color: '#F9FAFB',
-        boxShadow: '0 10px 20px rgba(0, 0, 0, 0.4), 0 6px 6px rgba(0, 0, 0, 0.2)',
-        borderRadius: '0.5rem',
-        padding: '1.5rem',
+        background: "#008080",
+        color: "#F9FAFB",
+        boxShadow: "0 10px 20px rgba(0, 0, 0, 0.4), 0 6px 6px rgba(0, 0, 0, 0.2)",
+        borderRadius: "0.5rem",
+        padding: "1.5rem",
       }}
       contentArrowStyle={{
-        borderRight: '7px solid #008080',
+        borderRight: "7px solid #008080",
       }}
       date={
-        <h3 className={`text-gray-400 text-sm font-bold ${index % 2 === 0 ? 'text-left' : 'text-right'}`}>
+        <h3
+          className={`text-gray-400 text-sm font-bold ${
+            index % 2 === 0 ? "text-left" : "text-right"
+          }`}
+        >
           {data.date}
         </h3>
       }
@@ -167,7 +203,7 @@ export default function ExperienceAndEducationSection() {
       <div className="max-w-7xl mx-auto">
         <motion.div>
           <p className="text-gray-400 uppercase text-sm mb-2">MY JOURNEY SO FAR</p>
-          <h1 className="text-5xl font-bold text-white mb-8">My Journey.  </h1>
+          <h1 className="text-5xl font-bold text-white mb-8">My Journey.</h1>
         </motion.div>
 
         <div className="mt-12 flex flex-col">

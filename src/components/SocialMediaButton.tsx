@@ -1,32 +1,61 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { AiFillGithub, AiFillLinkedin, AiFillGoogleCircle, AiFillPhone } from "react-icons/ai"; // Importamos los íconos de react-icons
+import {
+  AiFillGithub,
+  AiFillLinkedin,
+  AiFillGoogleCircle,
+  AiFillPhone,
+} from "react-icons/ai";
 
-const SocialMediaButton = () => {
-  const [isOpen, setIsOpen] = useState(false); // Estado para manejar la apertura/cierre de los iconos
-  const [socialMediaData, setSocialMediaData] = useState([]);
+// Definir el tipo de cada ítem
+interface SocialMediaItem {
+  name: string;
+  url: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  icon: React.ComponentType<any>;
+  color: string;
+}
 
-  // Función para alternar la apertura/cierre
+const SocialMediaButton: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [socialMediaData, setSocialMediaData] = useState<SocialMediaItem[]>([]);
+
   const toggleOpen = () => setIsOpen(!isOpen);
 
-  // Variantes de animación para los iconos
   const itemVariants = {
     hidden: { opacity: 0, x: -50 },
     visible: { opacity: 1, x: 0 },
   };
 
   useEffect(() => {
-    const fetchSocialMediaData = () => {
-      const data = [
-        { name: "GitHub", url: "https://github.com/Alexlop175Cenfotec", icon: AiFillGithub, color: "#333" },
-        { name: "LinkedIn", url: "https://www.linkedin.com/in/Alexanderlop175", icon: AiFillLinkedin, color: "#0077B5" },
-        { name: "Google", url: "mailto:Alexanderlop175@gmail.com", icon: AiFillGoogleCircle, color: "#DB4437" },
-        { name: "Contacto", url: "tel:+50671508034", icon: AiFillPhone, color: "#009C41" }, // Cambié el número de teléfono
-      ];
-      setSocialMediaData(data);
-    };
-    fetchSocialMediaData();
+    const data: SocialMediaItem[] = [
+      {
+        name: "GitHub",
+        url: "https://github.com/Alexlop175Cenfotec",
+        icon: AiFillGithub,
+        color: "#333",
+      },
+      {
+        name: "LinkedIn",
+        url: "https://www.linkedin.com/in/Alexanderlop175",
+        icon: AiFillLinkedin,
+        color: "#0077B5",
+      },
+      {
+        name: "Google",
+        url: "mailto:Alexanderlop175@gmail.com",
+        icon: AiFillGoogleCircle,
+        color: "#DB4437",
+      },
+      {
+        name: "Contacto",
+        url: "tel:+50671508034",
+        icon: AiFillPhone,
+        color: "#009C41",
+      },
+    ];
+    setSocialMediaData(data);
   }, []);
 
   return (
@@ -40,7 +69,6 @@ const SocialMediaButton = () => {
         marginTop: "20px",
       }}
     >
-      {/* Botón para abrir o cerrar los iconos */}
       <motion.button
         onClick={toggleOpen}
         whileTap={{ scale: 0.95 }}
@@ -61,7 +89,6 @@ const SocialMediaButton = () => {
         {isOpen ? "X" : "+"}
       </motion.button>
 
-      {/* Contenedor de los iconos de redes sociales */}
       {isOpen && (
         <motion.div
           className="social-icons"
@@ -71,17 +98,17 @@ const SocialMediaButton = () => {
           }}
         >
           {socialMediaData.map((social, index) => {
-            const IconComponent = social.icon; // Usar el ícono directamente sin require
+            const IconComponent = social.icon;
             return (
               <motion.a
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
+                key={index}
                 variants={itemVariants}
                 initial="hidden"
                 animate="visible"
                 exit="hidden"
-                key={index}
                 style={{
                   width: "50px",
                   height: "50px",
