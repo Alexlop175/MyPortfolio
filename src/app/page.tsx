@@ -3,7 +3,6 @@ import React, { Suspense, useRef } from "react"; // Added useRef for scrolling
 import { motion } from "framer-motion"; // Para animar el punto de estado activo
 import SocialMediaButton from "@/components/SocialMediaButton"; // Importar el nuevo componente
 import dynamic from "next/dynamic"; // Import next/dynamic
-import { FaDownload, FaArrowDown } from "react-icons/fa"; // Import icons for download and arrow
 
 // Dynamic import for Typewriter to ensure it's only loaded on the client-side
 // ssr: false is crucial here to prevent it from running on the server
@@ -20,14 +19,6 @@ const DisplacementSphere = dynamic(
 
 export default function Home() {
   const name = "Alexander López S.";
-  const techSectionRef = useRef(null); // Create a ref for the Tech section
-
-  // Function to handle scrolling to the Tech section
-  const scrollToTech = () => {
-    if (techSectionRef.current) {
-      techSectionRef.current.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
   return (
     <>
