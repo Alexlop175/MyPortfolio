@@ -3,15 +3,16 @@ import React, { useRef, useEffect } from "react";
 import * as THREE from "three";
 
 const DisplacementSphere = () => {
-  const canvasRef = useRef(null); // Ref para el canvas
-  const scene = useRef(new THREE.Scene()); // Escena de Three.js
-  const camera = useRef(new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)); // Cámara de Three.js
-  const renderer = useRef(new THREE.WebGLRenderer()); // Renderer de Three.js
-  const material = useRef(); // Material con Shader
-  const sphere = useRef(); // La esfera 3D
-  const mouse = useRef(new THREE.Vector2()); // Posición del mouse
+  const canvasRef = useRef<HTMLDivElement | null>(null); // Ref para el div que contiene el canvas
+  const scene = useRef(new THREE.Scene());
+  const camera = useRef<THREE.PerspectiveCamera>(
+    new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
+  );
+  const renderer = useRef<THREE.WebGLRenderer>(new THREE.WebGLRenderer());
+  const material = useRef<THREE.ShaderMaterial | null>(null);
+  const sphere = useRef<THREE.Mesh | null>(null);
+  const mouse = useRef<THREE.Vector2>(new THREE.Vector2());
 
-  // Inicialización del canvas y Three.js
   useEffect(() => {
     if (!canvasRef.current) return;
 
@@ -23,12 +24,14 @@ const DisplacementSphere = () => {
 
       // Ajustar la cámara para dispositivos pequeños
       const aspectRatio = window.innerWidth / window.innerHeight;
-      const cameraZoom = window.innerWidth > 768 ? 70 : 50; // Cámara más cerca en pantallas pequeñas
-      camera.current = new THREE.PerspectiveCamera(cameraZoom, aspectRatio, 0.1, 1000);
+      const cameraZoom = window.innerWidth > 768 ? 70 : 50;
+      camera.current.aspect = aspectRatio;
+      camera.current.fov = cameraZoom;
+      camera.current.updateProjectionMatrix();
       camera.current.position.z = 70;
 
-      // Crear geometría (aumentamos el tamaño de la esfera)
-      const geometry = new THREE.SphereGeometry(45, 100, 100); // Aumentamos el radio de la esfera
+      // Crear geometría
+      const geometry = new THREE.SphereGeometry(45, 100, 100);
 
       // Crear material con shaders
       material.current = new THREE.ShaderMaterial({
@@ -42,12 +45,10 @@ const DisplacementSphere = () => {
             vPos = position;
             vNormal = normalize(normal);
 
-            // Efecto de desplazamiento basado en el tiempo y la posición del mouse
             vec3 pos = position;
             pos.z += sin(pos.x * 1.0 + time) * 1.0;
             pos.y += sin(pos.x * 2.0 + time) * 1.0;
 
-            // Deformación más notoria dependiendo de la posición del mouse
             pos.x += mouse.x * 3.0;
             pos.y += mouse.y * 3.0;
 
@@ -64,42 +65,38 @@ const DisplacementSphere = () => {
             vec3 lightDir = normalize(lightPos - vPos);
             float diff = max(dot(vNormal, lightDir), 0.0);
             
-            // Colores: Usamos un color turquesa uniforme para toda la esfera
-            vec3 flameColor = vec3(0.0, 1.0, 1.0); // Turquesa
+            vec3 flameColor = vec3(0.0, 1.0, 1.0);
 
-            vec3 color = flameColor * diff; 
+            vec3 color = flameColor * diff;
 
             gl_FragColor = vec4(color, 1.0);
           }
         `,
         uniforms: {
           time: { value: 0.0 },
-          lightPos: { value: new THREE.Vector3(0, 10, 50) }, // Posición de la luz
+          lightPos: { value: new THREE.Vector3(0, 10, 50) },
           mouse: { value: mouse.current },
         },
-        wireframe: true, // Mostrar la geometría en wireframe
+        wireframe: true,
       });
 
       // Crear la esfera y agregarla a la escena
       sphere.current = new THREE.Mesh(geometry, material.current);
       scene.current.add(sphere.current);
 
-      // Función de animación
-      const animate = (time) => {
-        // Actualizar el tiempo para la animación
-        material.current.uniforms.time.value = time * 0.005;
+      // Animación
+      const animate = (time: number) => {
+        if (material.current) {
+          material.current.uniforms.time.value = time * 0.005;
+        }
 
-        // Renderizar la escena
         renderer.current.render(scene.current, camera.current);
-
-        // Continuar la animación
         requestAnimationFrame(animate);
       };
 
-      // Iniciar la animación
-      animate();
+      animate(0);
 
-      // Manejar el cambio de tamaño de la ventana
+      // Resize handler
       const onWindowResize = () => {
         const aspectRatio = window.innerWidth / window.innerHeight;
         camera.current.aspect = aspectRatio;
@@ -107,17 +104,14 @@ const DisplacementSphere = () => {
         renderer.current.setSize(window.innerWidth, window.innerHeight);
       };
 
-      // Agregar el evento de cambio de tamaño
       window.addEventListener("resize", onWindowResize);
 
-      // Función para manejar el movimiento del mouse
-      const onMouseMove = (event) => {
-        // Actualizar la posición del mouse normalizada
+      // Mouse move handler
+      const onMouseMove = (event: MouseEvent) => {
         mouse.current.x = (event.clientX / window.innerWidth) * 2 - 1;
         mouse.current.y = -(event.clientY / window.innerHeight) * 2 + 1;
       };
 
-      // Agregar el evento de movimiento del mouse
       window.addEventListener("mousemove", onMouseMove);
 
       return () => {
