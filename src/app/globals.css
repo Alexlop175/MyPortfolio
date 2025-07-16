@@ -69,3 +69,7 @@ body {
 .bg-gray-800 {
   background-color: black;
 }
+
+.vertical-timeline-element-icon {
+  box-shadow: 0 0 0 4px black !important; /* Cambia #008080 al color que prefieras */
+}

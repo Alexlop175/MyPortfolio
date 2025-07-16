@@ -28,94 +28,94 @@ export default function ExperienceAndEducationSection() {
     {
       type: "education",
       title: "Technical Bachelor Degree in Web Development",
-      institution: "COLEGIO TÉCNICO PROFESIONAL DE PAVAS",
+      institution: "Colegio Técnico Profesional de Pavas",
       date: "2021 - 2023",
       description: [
-        "Completed a technical bachelor's degree focused on web development, gaining foundational knowledge in front-end and back-end technologies.",
+        "Completed a technical bachelor's degree specializing in web development, acquiring strong foundations in front-end and back-end technologies.",
       ],
       iconBg: "#1F2937",
     },
     {
       type: "project",
-      title: "Sistema de Votaciones",
+      title: "Voting System",
       date: "2022",
       description: [
-        "Implemented an election voting system as part of an educational project, focusing on secure data handling and user authentication.",
+        "Developed an application to streamline student council elections, significantly reducing paper usage, costs, and election times. Built with C#, ADO.NET, and SQL Server.",
       ],
       iconBg: "#008080",
     },
     {
       type: "experience",
       title: "Frontend Developer (Intern)",
-      company: "AUTO MERCADO S.A",
+      company: "Auto Mercado S.A.",
       date: "July 2022",
       description: [
-        "Gained practical experience in front-end development within a corporate environment, contributing to real-world applications.",
+        "Gained hands-on experience developing user interfaces in a corporate environment, collaborating on real-world projects. Developed with HTML, CSS and JavaScript.",
       ],
       iconBg: "#1F2937",
     },
     {
       type: "experience",
       title: "Full Stack Developer (Intern)",
-      company: "AUTO MERCADO S.A",
+      company: "Auto Mercado S.A.",
       date: "October - December 2023",
       description: [
-        "Expanded skills to full-stack development, working on both front-end and back-end aspects of projects.",
+        "Independently developed a complete web application from scratch, including database architecture, backend and frontend interface. The solution is currently in production and actively used by the company. Developed with .NET, SQL Server, Azure.",
       ],
       iconBg: "#008080",
     },
     {
       type: "education",
       title: "Software Engineering",
-      institution: "UNIVERSIDAD CENFOTEC",
+      institution: "Universidad Cenfotec",
       date: "2024 - Present",
       description: [
-        "Currently pursuing a degree in Software Engineering, deepening understanding of advanced software development principles and practices.",
+        "Currently pursuing a degree in Software Engineering, focusing on advanced software architecture, cloud computing, and agile methodologies.",
       ],
       iconBg: "#008080",
     },
     {
       type: "project",
       title: "Ecosecha",
-      date: "C1 2024",
+      date: "Q1 2024",
       description: [
-        "Developed a platform for sustainable farming practices, including features for crop management and environmental monitoring.",
+        "Designed a platform to modernize Costa Rican farmers' markets, allowing vendors to showcase their produce online and enabling customers to shop seamlessly. Built with Node.js and MongoDB.",
       ],
       iconBg: "#1F2937",
     },
     {
       type: "project",
-      title: "Javafy",
-      date: "C2 2024",
+      title: "JavaFy",
+      date: "Q2 2024",
       description: [
-        "Built a Java-based application for [brief description of Javafy's purpose], demonstrating proficiency in backend development with Java.",
+        "Developed a desktop music streaming application inspired by Spotify, featuring song playback and library management. Built with Java Swing and MySQL.",
       ],
       iconBg: "#008080",
     },
     {
       type: "project",
-      title: "Healthtag",
-      date: "C2 2024",
+      title: "HealthTag",
+      date: "Q2 2024",
       description: [
-        "Created a health-focused application to track personal metrics, with a focus on user-friendly interface and data visualization.",
+        "Created a health-focused system for at-risk individuals using NFC technology. Scanning a tag provided access to critical medical data, medications, and emergency contacts. Developed with .NET, SQL Server, Bootstrap and JavaScript.",
       ],
       iconBg: "#1F2937",
     },
     {
       type: "project",
-      title: "Sistema de Multas de Tráfico (SMT)",
-      date: "C3 2024",
+      title: "Traffic Fines Management System (SMT)",
+      date: "Q3 2024",
       description: [
-        "Designed and implemented a traffic fine management system, integrating database functionalities for efficient record keeping.",
+        "Built a comprehensive traffic fines management system supporting multiple user roles: clients, officers, administrators, and super admins. Integrated AI-based vehicle plate recognition using Python. Utilized .NET (ADO.NET, Entity Framework), React Vite, Tailwind, SQL Server, and MongoDB.",
       ],
       iconBg: "#008080",
     },
     {
       type: "project",
       title: "CenfoScore",
-      date: "C1 2025",
+      date: "Q1 2025",
       description: [
-        "Developed a comprehensive scoring system, utilizing modern web technologies for a responsive user interface.",
+        "Developed a platform for students to rate and provide feedback on professors, helping peers make informed decisions when selecting courses. Built with FastAPI (Python), React, Next.js, Tailwind and TypeScript.",
       ],
       iconBg: "#1F2937",
     },
@@ -126,7 +126,8 @@ export default function ExperienceAndEducationSection() {
       contentStyle={{
         background: "#008080",
         color: "#F9FAFB",
-        boxShadow: "0 10px 20px rgba(0, 0, 0, 0.4), 0 6px 6px rgba(0, 0, 0, 0.2)",
+        boxShadow:
+          "0 10px 20px rgba(0, 0, 0, 0.4), 0 6px 6px rgba(0, 0, 0, 0.2)",
         borderRadius: "0.5rem",
         padding: "1.5rem",
       }}
@@ -156,9 +157,7 @@ export default function ExperienceAndEducationSection() {
       }
     >
       <div>
-        <h3 className="text-white text-xl font-semibold mb-2">
-          {data.title}
-        </h3>
+        <h3 className="text-white text-xl font-semibold mb-2">{data.title}</h3>
         {data.type !== "project" && (
           <p className="text-gray-200 text-md mb-1" style={{ margin: 0 }}>
             {data.company || data.institution}
@@ -191,7 +190,7 @@ export default function ExperienceAndEducationSection() {
         .vertical-timeline-element-date {
           font-size: 0.875rem;
           font-weight: 700;
-          color: #9CA3AF;
+          color: #9ca3af;
           white-space: nowrap;
         }
         .vertical-timeline-element-content ul {
@@ -202,15 +201,20 @@ export default function ExperienceAndEducationSection() {
 
       <div className="max-w-7xl mx-auto">
         <motion.div>
-          <p className="text-gray-400 uppercase text-sm mb-2">MY JOURNEY SO FAR</p>
+          <p className="text-gray-400 uppercase text-sm mb-2">
+            MY JOURNEY SO FAR
+          </p>
           <h1 className="text-5xl font-bold text-white mb-8">My Journey.</h1>
         </motion.div>
 
         <div className="mt-12 flex flex-col">
           <VerticalTimeline>
-            {timelineData.map((data, index) => (
-              <TimelineCard key={index} data={data} index={index} />
-            ))}
+            {timelineData
+              .slice()
+              .reverse()
+              .map((data, index) => (
+                <TimelineCard key={index} data={data} index={index} />
+              ))}
           </VerticalTimeline>
         </div>
       </div>
