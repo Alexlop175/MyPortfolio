@@ -1,5 +1,5 @@
-export default function projects(){
-    return(
-        <p>projects</p>
-    )
+import ProjectsSection from "@/components/ProjectsSection";
+
+export default function projects() {
+  return <ProjectsSection />;
 }
