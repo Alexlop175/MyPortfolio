@@ -97,7 +97,7 @@ const SocialMediaButton: React.FC = () => {
       {/* Bloque inferior: descarga de CVs */}
       <div className="flex flex-wrap gap-4 justify-center items-center mt-4">
         <a
-          href="/cv/CV_Espanol_AlexanderLopez.pdf"
+          href="/CV/Alexander López Sánchez CV Español.pdf"
           download
           className="inline-flex items-center gap-2 bg-neutral-800 hover:bg-neutral-700 text-white text-base font-medium py-2 px-5 rounded-full transition duration-200 shadow-md"
         >
@@ -106,7 +106,7 @@ const SocialMediaButton: React.FC = () => {
         </a>
 
         <a
-          href="/cv/CV_English_AlexanderLopez.pdf"
+          href="/CV/Alexander López Sánchez CV Español.pdf"
           download
           className="inline-flex items-center gap-2 bg-neutral-800 hover:bg-neutral-700 text-white text-base font-medium py-2 px-5 rounded-full transition duration-200 shadow-md"
         >

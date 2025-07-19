@@ -26,56 +26,79 @@ export default function ProjectsSection() {
     {
       title: "Voting System",
       technologies: ["C#", "ADO.NET", "SQL Server"],
-      description: "Developed an application to streamline student council elections, significantly reducing paper usage, costs, and election times.",
+      description:
+        "Developed an application to streamline student council elections, significantly reducing paper usage, costs, and election times.",
       githubLink: "https://github.com/yourusername/voting-system", // Replace with actual link
       image: "/projects/SV.jpg", // Replace with image path
     },
     {
       title: "Ecosecha",
       technologies: ["Node.js", "MongoDB"],
-      description: "Designed a platform to modernize Costa Rican farmers' markets, allowing vendors to showcase their produce online.",
+      description:
+        "Designed a platform to modernize Costa Rican farmers' markets, allowing vendors to showcase their produce online.",
       githubLink: "https://github.com/yourusername/ecosecha", // Replace with actual link
       image: "/projects/Ecosecha.png", // Replace with image path
     },
     {
       title: "JavaFy",
       technologies: ["Java Swing", "MySQL"],
-      description: "Developed a desktop music streaming application inspired by Spotify, featuring song playback and library management.",
+      description:
+        "Developed a desktop music streaming application inspired by Spotify, featuring song playback and library management.",
       githubLink: "https://github.com/yourusername/javafy", // Replace with actual link
-      image: "/path-to-image/javafy.png", // Replace with image path
+      image: "/projects/javafy.png", // Replace with image path
     },
     {
       title: "HealthTag",
       technologies: [".NET", "SQL Server", "Bootstrap", "JavaScript"],
-      description: "Created a health-focused system for at-risk individuals using NFC technology. Scanning a tag provided access to critical medical data, medications, and emergency contacts.",
+      description:
+        "Created a health-focused system for at-risk individuals using NFC technology. Scanning a tag provided access to critical medical data, medications, and emergency contacts.",
       githubLink: "https://github.com/yourusername/healthtag", // Add actual link
       image: "/projects/HealthTag.jpg", // Add actual image path
     },
     {
       title: "SMT",
-      technologies: [".NET", "ADO.NET", "Entity Framework", "React Vite", "Tailwind", "SQL Server", "MongoDB", "Python (AI)"],
-      description: "Built a comprehensive traffic fines management system supporting multiple user roles: clients, officers, administrators, and super admins. Integrated AI-based vehicle plate recognition using Python.",
+      technologies: [
+        ".NET",
+        "ADO.NET",
+        "Entity Framework",
+        "React Vite",
+        "Tailwind",
+        "SQL Server",
+        "MongoDB",
+        "Python (AI)",
+      ],
+      description:
+        "Built a comprehensive traffic fines management system supporting multiple user roles: clients, officers, administrators, and super admins. Integrated AI-based vehicle plate recognition using Python.",
       githubLink: "https://github.com/yourusername/smt", // Add actual link
       image: "/projects/SMT.png", // Add actual image path
     },
     {
       title: "CenfoScore",
-      technologies: ["FastAPI (Python)", "React", "Next.js", "Tailwind", "TypeScript"],
-      description: "Developed a platform for students to rate and provide feedback on professors, helping peers make informed decisions when selecting courses.",
+      technologies: [
+        "FastAPI (Python)",
+        "React",
+        "Next.js",
+        "Tailwind",
+        "TypeScript",
+      ],
+      description:
+        "Developed a platform for students to rate and provide feedback on professors, helping peers make informed decisions when selecting courses.",
       githubLink: "https://github.com/yourusername/cenfoscore", // Add actual link
       image: "/projects/CenfoScore.png", // Add actual image path
     },
-        {
+    {
       title: "Fairy Closet",
       technologies: ["Node JS", "JavaScript", "MongoDB", "HBS", "CSS"],
-      description: "Developed a platform for students to rate and provide feedback on professors, helping peers make informed decisions when selecting courses.",
+      description:
+        "Developed a platform for students to rate and provide feedback on professors, helping peers make informed decisions when selecting courses.",
       githubLink: "https://github.com/yourusername/cenfoscore", // Add actual link
       image: "/projects/FairyCloset.png", // Add actual image path
     },
-        {
+    {
       title: "Volatir",
       technologies: ["Node JS", "JavaScript"],
-      description: "Developed a platform for students to rate and provide feedback on professors, helping peers make informed decisions when selecting courses.",
+      description:
+        "Developed a platform for students to rate and provide feedback on professors, helping peers make informed decisions when selecting courses.",
       githubLink: "https://github.com/yourusername/cenfoscore", // Add actual link
       image: "/projects/Volatir.png", // Add actual image path
     },
@@ -86,14 +109,16 @@ export default function ProjectsSection() {
       <div className="max-w-7xl mx-auto">
         {/* Title */}
         <p className="text-gray-400 uppercase text-sm mb-2">MY PROJECTS</p>
-        <h1 className="text-5xl font-bold text-white mb-8">Projects I&apos;ve Worked On</h1>
+        <h1 className="text-5xl font-bold text-white mb-8">
+          Projects I&apos;ve Worked On
+        </h1>
 
         <motion.div
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: false, amount: 0 }}
         >
           {projectsData.map((project, index) => (
             <motion.div
@@ -108,18 +133,24 @@ export default function ProjectsSection() {
                 <Image
                   src={project.image}
                   alt={project.title}
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded-lg"
-                  loading="lazy"
+                  fill
+                  priority={index === 0}
+                  sizes="(max-width: 768px) 100vw,
+         (max-width: 1200px) 50vw,
+         33vw"
+                  className="rounded-lg object-cover"
                 />
               </div>
 
               {/* Project Title */}
-              <h3 className="text-2xl font-semibold text-teal-400 mb-2">{project.title}</h3>
+              <h3 className="text-2xl font-semibold text-teal-400 mb-2">
+                {project.title}
+              </h3>
 
               {/* Description */}
-              <p className="text-sm text-gray-300 mb-3 flex-grow">{project.description}</p>
+              <p className="text-sm text-gray-300 mb-3 flex-grow">
+                {project.description}
+              </p>
 
               {/* Technologies Used */}
               <div className="text-xs text-gray-400 mb-4">

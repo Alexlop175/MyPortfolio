@@ -1,5 +1,6 @@
 "use client";
-import React, { Suspense } from "react";
+
+import React, { Suspense, useState, useEffect } from "react";
 import { motion, Variants } from "framer-motion";
 import { Canvas } from "@react-three/fiber";
 import {
@@ -28,35 +29,24 @@ const technologies = [
   { name: "Git", icon: "/tech/git.png" },
 ];
 
-// Estilos de texto
 const sectionSubTextLight = "text-gray-400 uppercase text-sm";
 const sectionHeadTextLight = "text-5xl font-bold text-white";
 
-// Animación de entrada del título
 const textVariant = (delay = 0): Variants => ({
-  hidden: {
-    y: -50,
-    opacity: 0,
-  },
+  hidden: { y: -50, opacity: 0 },
   show: {
     y: 0,
     opacity: 1,
-    transition: {
-      type: "spring" as const,
-      duration: 1.25,
-      delay,
-    },
+    transition: { type: "spring", duration: 1.25, delay },
   },
 });
 
-// Props de Ball
 interface BallProps {
   imgUrl: string;
 }
 
-// Componente Ball 3D
 const Ball: React.FC<BallProps> = ({ imgUrl }) => {
-  const [decal] = useTexture([imgUrl]);
+  const decal = useTexture(imgUrl);
 
   return (
     <Float speed={2.5} rotationIntensity={1} floatIntensity={2}>
@@ -80,13 +70,22 @@ const Ball: React.FC<BallProps> = ({ imgUrl }) => {
   );
 };
 
-// Props de BallCanvas
 interface BallCanvasProps {
   icon: string;
 }
 
-// Componente Canvas de cada Ball
 const BallCanvas: React.FC<BallCanvasProps> = ({ icon }) => {
+  const [isValid, setIsValid] = useState(true);
+
+  useEffect(() => {
+    const img = new window.Image();
+    img.src = icon;
+    img.onload = () => setIsValid(true);
+    img.onerror = () => setIsValid(false);
+  }, [icon]);
+
+  if (!isValid) return null;
+
   return (
     <Canvas frameloop="always" gl={{ preserveDrawingBuffer: true }}>
       <Suspense fallback={null}>
@@ -98,20 +97,19 @@ const BallCanvas: React.FC<BallCanvasProps> = ({ icon }) => {
   );
 };
 
-// Componente principal Tech
 const Tech: React.FC = () => {
   return (
     <section className="bg-black py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <motion.div variants={textVariant()}>
+        <motion.div variants={textVariant()} initial="hidden" animate="show">
           <p className={`${sectionSubTextLight} mb-2`}>My skills</p>
           <h2 className={`${sectionHeadTextLight} mb-8`}>Technologies.</h2>
         </motion.div>
 
         <div className="flex flex-wrap justify-center gap-10 mt-14">
-          {technologies.map((technology) => (
-            <div className="w-28 h-28" key={technology.name}>
-              <BallCanvas icon={technology.icon} />
+          {technologies.map((tech) => (
+            <div className="w-28 h-28" key={tech.name}>
+              <BallCanvas icon={tech.icon} />
             </div>
           ))}
         </div>

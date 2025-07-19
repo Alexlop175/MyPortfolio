@@ -1,6 +1,6 @@
 "use client";
+
 import React from "react";
-import { motion } from "framer-motion";
 import { FaBriefcase, FaGraduationCap, FaCode } from "react-icons/fa";
 import {
   VerticalTimeline,
@@ -38,6 +38,7 @@ export default function ExperienceAndEducationSection() {
     {
       type: "project",
       title: "Voting System",
+      institution: "Colegio Técnico Profesional de Pavas",
       date: "2022",
       description: [
         "Developed an application to streamline student council elections, significantly reducing paper usage, costs, and election times. Built with C#, ADO.NET, and SQL Server.",
@@ -77,6 +78,7 @@ export default function ExperienceAndEducationSection() {
     {
       type: "project",
       title: "Ecosecha",
+      institution: "Universidad Cenfotec",
       date: "Q1 2024",
       description: [
         "Designed a platform to modernize Costa Rican farmers' markets, allowing vendors to showcase their produce online and enabling customers to shop seamlessly. Built with Node.js and MongoDB.",
@@ -86,6 +88,7 @@ export default function ExperienceAndEducationSection() {
     {
       type: "project",
       title: "JavaFy",
+      institution: "Universidad Cenfotec",
       date: "Q2 2024",
       description: [
         "Developed a desktop music streaming application inspired by Spotify, featuring song playback and library management. Built with Java Swing and MySQL.",
@@ -95,6 +98,7 @@ export default function ExperienceAndEducationSection() {
     {
       type: "project",
       title: "HealthTag",
+      institution: "Universidad Cenfotec",
       date: "Q2 2024",
       description: [
         "Created a health-focused system for at-risk individuals using NFC technology. Scanning a tag provided access to critical medical data, medications, and emergency contacts. Developed with .NET, SQL Server, Bootstrap and JavaScript.",
@@ -104,6 +108,7 @@ export default function ExperienceAndEducationSection() {
     {
       type: "project",
       title: "Traffic Fines Management System (SMT)",
+      institution: "Universidad Cenfotec",
       date: "Q3 2024",
       description: [
         "Built a comprehensive traffic fines management system supporting multiple user roles: clients, officers, administrators, and super admins. Integrated AI-based vehicle plate recognition using Python. Utilized .NET (ADO.NET, Entity Framework), React Vite, Tailwind, SQL Server, and MongoDB.",
@@ -113,6 +118,7 @@ export default function ExperienceAndEducationSection() {
     {
       type: "project",
       title: "CenfoScore",
+      institution: "Universidad Cenfotec",
       date: "Q1 2025",
       description: [
         "Developed a platform for students to rate and provide feedback on professors, helping peers make informed decisions when selecting courses. Built with FastAPI (Python), React, Next.js, Tailwind and TypeScript.",
@@ -158,7 +164,7 @@ export default function ExperienceAndEducationSection() {
     >
       <div>
         <h3 className="text-white text-xl font-semibold mb-2">{data.title}</h3>
-        {data.type !== "project" && (
+        {(data.company || data.institution) && (
           <p className="text-gray-200 text-md mb-1" style={{ margin: 0 }}>
             {data.company || data.institution}
           </p>
@@ -175,7 +181,7 @@ export default function ExperienceAndEducationSection() {
   );
 
   return (
-    <section className="bg-black py-16 px-4 sm:px-6 lg:px-8">
+    <section className="bg-black py-16 px-4 sm:px-6 lg:px-8 overflow-x-hidden">
       <style jsx global>{`
         .vertical-timeline-element--left .vertical-timeline-element-date {
           right: calc(50% - 10px) !important;
@@ -200,12 +206,12 @@ export default function ExperienceAndEducationSection() {
       `}</style>
 
       <div className="max-w-7xl mx-auto">
-        <motion.div>
+        <div>
           <p className="text-gray-400 uppercase text-sm mb-2">
             MY JOURNEY SO FAR
           </p>
           <h1 className="text-5xl font-bold text-white mb-8">My Journey.</h1>
-        </motion.div>
+        </div>
 
         <div className="mt-12 flex flex-col">
           <VerticalTimeline>
