@@ -25,52 +25,50 @@ export default function ProjectsSection() {
   const projectsData = [
     {
       title: "Voting System",
-      technologies: ["C#", "ADO.NET", "SQL Server"],
+      technologies: ["ADO.NET", "SQL Server", "JS"],
       description:
-        "Developed an application to streamline student council elections, significantly reducing paper usage, costs, and election times.",
-      githubLink: "https://github.com/yourusername/voting-system", // Replace with actual link
-      image: "/projects/SV.jpg", // Replace with image path
+        "Developed an app to streamline student elections, reducing paper use, costs, and voting time.",
+      githubLink: "https://github.com/yourusername/voting-system",
+      image: "/projects/SV.jpg",
     },
     {
       title: "Ecosecha",
       technologies: ["Node.js", "MongoDB"],
       description:
-        "Designed a platform to modernize Costa Rican farmers' markets, allowing vendors to showcase their produce online.",
-      githubLink: "https://github.com/yourusername/ecosecha", // Replace with actual link
-      image: "/projects/Ecosecha.png", // Replace with image path
+        "Built a web platform to help Costa Rican farmers promote and sell produce online efficiently.",
+      githubLink: "https://github.com/yourusername/ecosecha",
+      image: "/projects/Ecosecha.png",
     },
     {
       title: "JavaFy",
-      technologies: ["Java Swing", "MySQL"],
+      technologies: ["Java", "Swing", "MySQL"],
       description:
-        "Developed a desktop music streaming application inspired by Spotify, featuring song playback and library management.",
-      githubLink: "https://github.com/yourusername/javafy", // Replace with actual link
-      image: "/projects/javafy.png", // Replace with image path
+        "Created a desktop music player inspired by Spotify with playback and personal library features.",
+      githubLink: "https://github.com/yourusername/javafy",
+      image: "/projects/javafy.png",
     },
     {
       title: "HealthTag",
-      technologies: [".NET", "SQL Server", "Bootstrap", "JavaScript"],
+      technologies: [".NET", "SQL Server", "Bootstrap", "JS"],
       description:
-        "Created a health-focused system for at-risk individuals using NFC technology. Scanning a tag provided access to critical medical data, medications, and emergency contacts.",
-      githubLink: "https://github.com/yourusername/healthtag", // Add actual link
-      image: "/projects/HealthTag.jpg", // Add actual image path
+        "Developed a health alert system using NFC to access key medical info in emergencies.",
+      githubLink: "https://github.com/yourusername/healthtag",
+      image: "/projects/HealthTag.jpg",
     },
     {
       title: "SMT",
       technologies: [
         ".NET",
-        "ADO.NET",
-        "Entity Framework",
-        "React Vite",
+        "React",
         "Tailwind",
         "SQL Server",
         "MongoDB",
         "Python (AI)",
       ],
       description:
-        "Built a comprehensive traffic fines management system supporting multiple user roles: clients, officers, administrators, and super admins. Integrated AI-based vehicle plate recognition using Python.",
-      githubLink: "https://github.com/yourusername/smt", // Add actual link
-      image: "/projects/SMT.png", // Add actual image path
+        "Designed a traffic fine system with user roles and AI-based license plate recognition.",
+      githubLink: "https://github.com/yourusername/smt",
+      image: "/projects/SMT.png",
     },
     {
       title: "CenfoScore",
@@ -82,25 +80,33 @@ export default function ProjectsSection() {
         "TypeScript",
       ],
       description:
-        "Developed a platform for students to rate and provide feedback on professors, helping peers make informed decisions when selecting courses.",
-      githubLink: "https://github.com/yourusername/cenfoscore", // Add actual link
-      image: "/projects/CenfoScore.png", // Add actual image path
+        "Created a platform for students to rate professors and make informed course decisions.",
+      githubLink: "https://github.com/yourusername/cenfoscore",
+      image: "/projects/CenfoScore.png",
     },
     {
       title: "Fairy Closet",
       technologies: ["Node JS", "JavaScript", "MongoDB", "HBS", "CSS"],
       description:
-        "Developed a platform for students to rate and provide feedback on professors, helping peers make informed decisions when selecting courses.",
-      githubLink: "https://github.com/yourusername/cenfoscore", // Add actual link
-      image: "/projects/FairyCloset.png", // Add actual image path
+        "Created an online store for handmade accessories, allowing its creator to showcase and sell her work.",
+      githubLink: "https://github.com/yourusername/fairycloset",
+      image: "/projects/FairyCloset.png",
     },
     {
       title: "Volatir",
-      technologies: ["Node JS", "JavaScript"],
+      technologies: ["Node JS", "HTML", "CSS"],
       description:
-        "Developed a platform for students to rate and provide feedback on professors, helping peers make informed decisions when selecting courses.",
-      githubLink: "https://github.com/yourusername/cenfoscore", // Add actual link
-      image: "/projects/Volatir.png", // Add actual image path
+        "Developed a business website for managing aerial and ground transportation rentals and reservations.",
+      githubLink: "https://github.com/yourusername/volatir",
+      image: "/projects/Volatir.png",
+    },
+    {
+      title: "Drive",
+      technologies: ["Dart", "Firebase", "Google Maps API"],
+      description:
+        "Mobile app that connects drivers and passengers with similar routes to save costs and reduce emissions.",
+      githubLink: "https://github.com/yourusername/drive-carpool",
+      image: "/projects/DriveU.jpeg",
     },
   ];
 
