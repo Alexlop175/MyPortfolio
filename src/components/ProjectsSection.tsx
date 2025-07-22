@@ -1,11 +1,52 @@
 "use client";
 import React from "react";
-import { motion } from "framer-motion"; // For animations
-import { FaGithub } from "react-icons/fa"; // For the GitHub icon
-import Image from "next/image"; // Import next/image for image optimization
+import { motion } from "framer-motion";
+import { FaGithub } from "react-icons/fa";
+import Image from "next/image";
+
+const techColors: Record<string, string> = {
+  // Frontend
+  React: "bg-cyan-500", // React blue
+  Tailwind: "bg-cyan-600", // Tailwind light blue
+  JavaScript: "bg-yellow-400", // JS yellow
+  TypeScript: "bg-blue-500", // TS blue
+  "Next.js": "bg-neutral-700", // Neutral gray
+  HTML: "bg-orange-600", // HTML red
+  CSS: "bg-blue-400", // CSS blue
+  HBS: "bg-orange-600", // Handlebars red
+
+  // Backend
+  "Node.js": "bg-green-500", // Node green
+  "Node JS": "bg-green-500", // alias
+  FastAPI: "bg-emerald-600", // FastAPI green
+
+  // General Purpose
+  "Python (AI)": "bg-yellow-400", // Python yellow
+  Python: "bg-yellow-400",
+
+  // Desktop
+  Java: "bg-red-700", // Java red
+  Swing: "bg-gray-500", // Generic gray for UI lib
+
+  // Database
+  "SQL Server": "bg-gray-700", // .NET purple
+  "ADO.NET": "bg-purple-800", // .NET family
+  MySQL: "bg-blue-900", // MySQL orange
+  MongoDB: "bg-emerald-700", // MongoDB green
+
+  // Other
+  ".NET": "bg-indigo-600", // .NET purple-blue
+  Bootstrap: "bg-purple-500", // Bootstrap magenta
+  Firebase: "bg-amber-400", // Firebase yellow-orange
+  "Google Maps API": "bg-green-600", // Maps green
+  Dart: "bg-sky-600", // Dart blue-cyan
+
+  // Default fallback
+  JS: "bg-yellow-400",
+  default: "bg-gray-600",
+};
 
 export default function ProjectsSection() {
-  // Variants for animations
   const itemVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
@@ -21,7 +62,6 @@ export default function ProjectsSection() {
     },
   };
 
-  // Project data
   const projectsData = [
     {
       title: "Voting System",
@@ -72,13 +112,7 @@ export default function ProjectsSection() {
     },
     {
       title: "CenfoScore",
-      technologies: [
-        "FastAPI (Python)",
-        "React",
-        "Next.js",
-        "Tailwind",
-        "TypeScript",
-      ],
+      technologies: ["FastAPI", "React", "Next.js", "Tailwind", "TypeScript"],
       description:
         "Created a platform for students to rate professors and make informed course decisions.",
       githubLink: "https://github.com/yourusername/cenfoscore",
@@ -113,7 +147,6 @@ export default function ProjectsSection() {
   return (
     <section className="bg-black py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        {/* Title */}
         <p className="text-gray-400 uppercase text-sm mb-2">MY PROJECTS</p>
         <h1 className="text-5xl font-bold text-white mb-8">
           Projects I&apos;ve Worked On
@@ -129,9 +162,10 @@ export default function ProjectsSection() {
           {projectsData.map((project, index) => (
             <motion.div
               key={index}
-              className="bg-gray-800 text-white rounded-lg shadow-xl p-6 flex flex-col items-center justify-between text-center h-auto"
+              className="bg-gray-800 text-white rounded-xl shadow-md p-6 flex flex-col items-center justify-between text-center"
               variants={itemVariants}
               whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
               {/* Project Image */}
@@ -141,37 +175,44 @@ export default function ProjectsSection() {
                   alt={project.title}
                   fill
                   priority={index === 0}
-                  sizes="(max-width: 768px) 100vw,
-         (max-width: 1200px) 50vw,
-         33vw"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="rounded-lg object-cover"
                 />
               </div>
 
-              {/* Project Title */}
-              <h3 className="text-2xl font-semibold text-teal-400 mb-2">
+              {/* Title */}
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
                 {project.title}
               </h3>
 
               {/* Description */}
-              <p className="text-sm text-gray-300 mb-3 flex-grow">
+              <p className="text-sm text-gray-300 mb-3">
                 {project.description}
               </p>
 
-              {/* Technologies Used */}
-              <div className="text-xs text-gray-400 mb-4">
-                <span className="font-semibold">Technologies: </span>
-                {project.technologies.join(", ")}
+              {/* Tech Tags */}
+              <div className="flex flex-wrap justify-center gap-2 mt-3 mb-5">
+                {project.technologies.map((tech, i) => (
+                  <span
+                    key={i}
+                    className={`text-xs px-3 py-1 rounded-full font-medium shadow-sm ${
+                      techColors[tech] || techColors["default"]
+                    }`}
+                  >
+                    {tech}
+                  </span>
+                ))}
               </div>
 
-              {/* GitHub Link Button with Border */}
+              {/* GitHub Button */}
               <a
                 href={project.githubLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-auto inline-flex items-center px-5 py-2 border-2 border-solid border-teal-500 rounded-lg text-teal-500 font-medium hover:bg-teal-500 hover:text-white transition-colors duration-300 shadow-md"
+                title="View project on GitHub"
+                className="mt-auto inline-flex items-center gap-2 px-4 py-2 border border-teal-400 text-white rounded-md hover:bg-teal-500 hover:border-transparent hover:text-white transition-all duration-300 shadow-md"
               >
-                <FaGithub size={20} className="inline mr-2" />
+                <FaGithub size={18} />
                 View on GitHub
               </a>
             </motion.div>
