@@ -4,48 +4,6 @@ import { motion } from "framer-motion";
 import { FaGithub } from "react-icons/fa";
 import Image from "next/image";
 
-const techColors: Record<string, string> = {
-  // Frontend
-  React: "bg-cyan-500", // React blue
-  Tailwind: "bg-cyan-600", // Tailwind light blue
-  JavaScript: "bg-yellow-400", // JS yellow
-  TypeScript: "bg-blue-500", // TS blue
-  "Next.js": "bg-neutral-700", // Neutral gray
-  HTML: "bg-orange-600", // HTML red
-  CSS: "bg-blue-400", // CSS blue
-  HBS: "bg-orange-600", // Handlebars red
-
-  // Backend
-  "Node.js": "bg-green-500", // Node green
-  "Node JS": "bg-green-500", // alias
-  FastAPI: "bg-emerald-600", // FastAPI green
-
-  // General Purpose
-  "Python (AI)": "bg-yellow-400", // Python yellow
-  Python: "bg-yellow-400",
-
-  // Desktop
-  Java: "bg-red-700", // Java red
-  Swing: "bg-gray-500", // Generic gray for UI lib
-
-  // Database
-  "SQL Server": "bg-gray-700", // .NET purple
-  "ADO.NET": "bg-purple-800", // .NET family
-  MySQL: "bg-blue-900", // MySQL orange
-  MongoDB: "bg-emerald-700", // MongoDB green
-
-  // Other
-  ".NET": "bg-indigo-600", // .NET purple-blue
-  Bootstrap: "bg-purple-500", // Bootstrap magenta
-  Firebase: "bg-amber-400", // Firebase yellow-orange
-  "Google Maps API": "bg-green-600", // Maps green
-  Dart: "bg-sky-600", // Dart blue-cyan
-
-  // Default fallback
-  JS: "bg-yellow-400",
-  default: "bg-gray-600",
-};
-
 export default function ProjectsSection() {
   const itemVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -181,7 +139,7 @@ export default function ProjectsSection() {
               </div>
 
               {/* Title */}
-              <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
+              <h3 className="text-xl sm:text-2xl font-bold text-teal-400 mb-2">
                 {project.title}
               </h3>
 
@@ -195,9 +153,7 @@ export default function ProjectsSection() {
                 {project.technologies.map((tech, i) => (
                   <span
                     key={i}
-                    className={`text-xs px-3 py-1 rounded-full font-medium shadow-sm ${
-                      techColors[tech] || techColors["default"]
-                    }`}
+                    className="text-xs px-3 py-1 rounded-full bg-gray-800 text-gray-300 border border-gray-600 shadow-sm"
                   >
                     {tech}
                   </span>
