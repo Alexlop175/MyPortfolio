@@ -26,7 +26,7 @@ const projectsData = [
     technologies: ["FastAPI", "React", "Next.js", "Tailwind", "TypeScript"],
     description:
       "Created a platform for students to rate professors and make informed course decisions.",
-    githubLink: "https://github.com/yourusername/cenfoscore",
+    githubLink: "https://github.com/Alexlop175/CenfoScore",
     image: "/projects/CenfoScore.png",
   },
   {
@@ -41,7 +41,7 @@ const projectsData = [
     ],
     description:
       "Designed a traffic fine system with user roles and AI-based license plate recognition.",
-    githubLink: "https://github.com/yourusername/smt",
+    githubLink: "https://github.com/Alexlop175Cenfotec/Proyecto2",
     image: "/projects/SMT.png",
   },
   {
@@ -49,7 +49,7 @@ const projectsData = [
     technologies: [".NET", "SQL Server", "Bootstrap", "JS"],
     description:
       "Developed a health alert system using NFC to access key medical info in emergencies.",
-    githubLink: "https://github.com/yourusername/healthtag",
+    githubLink: "https://github.com/Alexlop175Cenfotec/HealthTag",
     image: "/projects/HealthTag.png",
   },
   {
@@ -65,7 +65,7 @@ const projectsData = [
     technologies: ["Node JS", "JavaScript", "MongoDB", "HBS", "CSS"],
     description:
       "Created an online store for handmade accessories, allowing its creator to showcase and sell her work.",
-    githubLink: "https://github.com/yourusername/fairycloset",
+    githubLink: "https://github.com/Alexlop175/FairyCloset",
     image: "/projects/FairyCloset.png",
   },
   {
@@ -73,7 +73,7 @@ const projectsData = [
     technologies: ["Node JS", "HTML", "CSS"],
     description:
       "Developed a business website for managing aerial and ground transportation rentals and reservations.",
-    githubLink: "https://github.com/yourusername/volatir",
+    githubLink: "https://github.com/Alexlop175/Volatir",
     image: "/projects/Volatir.png",
   },
   {
@@ -85,11 +85,11 @@ const projectsData = [
     image: "/projects/Ecosecha.png",
   },
   {
-    title: "Drive",
+    title: "Drive U",
     technologies: ["Dart", "Firebase", "Google Maps API"],
     description:
       "Mobile app that connects drivers and passengers with similar routes to save costs and reduce emissions.",
-    githubLink: "https://github.com/yourusername/drive-carpool",
+    githubLink: "https://github.com/Alexlop175/DriveU",
     image: "/projects/DriveU.jpeg",
   },
   {

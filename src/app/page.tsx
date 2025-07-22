@@ -88,10 +88,9 @@ export default function Home() {
               startDelay={500}
               cursorColor="white"
               multiText={[
-                "Full Stack Developer",
                 "Software Engineer",
-                "Cenfotec Student",
-                "Full Stack Developer",
+                "Alexanderlop175@gmail.com",
+                "+506 7150-8034",
               ]}
               multiTextDelay={2000}
               typeSpeed={100}

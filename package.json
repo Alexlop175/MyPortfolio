@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@formspree/react": "^3.0.0",
     "@popmotion/popcorn": "^0.4.4",
     "@react-three/drei": "^10.5.1",
     "@react-three/fiber": "^9.2.0",
