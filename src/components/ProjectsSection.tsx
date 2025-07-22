@@ -50,7 +50,7 @@ const projectsData = [
     description:
       "Developed a health alert system using NFC to access key medical info in emergencies.",
     githubLink: "https://github.com/yourusername/healthtag",
-    image: "/projects/HealthTag.jpg",
+    image: "/projects/HealthTag.png",
   },
   {
     title: "JavaFy",
