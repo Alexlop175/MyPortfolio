@@ -24,108 +24,113 @@ interface TimelineCardProps {
 }
 
 export default function ExperienceAndEducationSection() {
-  const timelineData: TimelineItem[] = [
+const timelineData: TimelineItem[] = [
+  {
+    type: "education",
+    title: "Technical Bachelor Degree in Web Development",
+    institution: "Colegio Técnico Profesional de Pavas",
+    date: "2021 - 2023",
+    description: [],
+    iconBg: "#1F2937",
+  },
+  {
+    type: "project",
+    title: "Voting System",
+    institution: "Colegio Técnico Profesional de Pavas",
+    date: "2022",
+    description: [],
+    iconBg: "#008080",
+  },
+  {
+    type: "experience",
+    title: "Frontend Developer (Intern)",
+    company: "Auto Mercado S.A.",
+    date: "July 2022",
+    description: [],
+    iconBg: "#1F2937",
+  },
     {
-      type: "education",
-      title: "Technical Bachelor Degree in Web Development",
-      institution: "Colegio Técnico Profesional de Pavas",
-      date: "2021 - 2023",
-      description: [
-        "Completed a technical bachelor's degree specializing in web development, acquiring strong foundations in front-end and back-end technologies.",
-      ],
-      iconBg: "#1F2937",
-    },
+    type: "project",
+    title: "DriveU",
+    institution: "Colegio Técnico Profesional de Pavas",
+    date: "2023",
+    description: [],
+    iconBg: "#1F2937",
+  },
+  {
+    type: "experience",
+    title: "Full Stack Developer (Intern)",
+    company: "Auto Mercado S.A.",
+    date: "October - December 2023",
+    description: [],
+    iconBg: "#008080",
+  },
+  {
+    type: "education",
+    title: "Software Engineering",
+    institution: "Universidad Cenfotec",
+    date: "2024 - Present",
+    description: [],
+    iconBg: "#008080",
+  },
+  {
+    type: "project",
+    title: "Ecosecha",
+    institution: "Universidad Cenfotec",
+    date: "Q1 2024",
+    description: [],
+    iconBg: "#1F2937",
+  },
     {
-      type: "project",
-      title: "Voting System",
-      institution: "Colegio Técnico Profesional de Pavas",
-      date: "2022",
-      description: [
-        "Developed an application to streamline student council elections, significantly reducing paper usage, costs, and election times. Built with C#, ADO.NET, and SQL Server.",
-      ],
-      iconBg: "#008080",
-    },
+    type: "project",
+    title: "Volatir",
+    institution: "Freelancer ",
+    date: "Q2 2024",
+    description: [],
+    iconBg: "#1F2937",
+  },
     {
-      type: "experience",
-      title: "Frontend Developer (Intern)",
-      company: "Auto Mercado S.A.",
-      date: "July 2022",
-      description: [
-        "Gained hands-on experience developing user interfaces in a corporate environment, collaborating on real-world projects. Developed with HTML, CSS and JavaScript.",
-      ],
-      iconBg: "#1F2937",
-    },
-    {
-      type: "experience",
-      title: "Full Stack Developer (Intern)",
-      company: "Auto Mercado S.A.",
-      date: "October - December 2023",
-      description: [
-        "Independently developed a complete web application from scratch, including database architecture, backend and frontend interface. The solution is currently in production and actively used by the company. Developed with .NET, SQL Server, Azure.",
-      ],
-      iconBg: "#008080",
-    },
-    {
-      type: "education",
-      title: "Software Engineering",
-      institution: "Universidad Cenfotec",
-      date: "2024 - Present",
-      description: [
-        "Currently pursuing a degree in Software Engineering, focusing on advanced software architecture, cloud computing, and agile methodologies.",
-      ],
-      iconBg: "#008080",
-    },
-    {
-      type: "project",
-      title: "Ecosecha",
-      institution: "Universidad Cenfotec",
-      date: "Q1 2024",
-      description: [
-        "Designed a platform to modernize Costa Rican farmers' markets, allowing vendors to showcase their produce online and enabling customers to shop seamlessly. Built with Node.js and MongoDB.",
-      ],
-      iconBg: "#1F2937",
-    },
-    {
-      type: "project",
-      title: "JavaFy",
-      institution: "Universidad Cenfotec",
-      date: "Q2 2024",
-      description: [
-        "Developed a desktop music streaming application inspired by Spotify, featuring song playback and library management. Built with Java Swing and MySQL.",
-      ],
-      iconBg: "#008080",
-    },
-    {
-      type: "project",
-      title: "HealthTag",
-      institution: "Universidad Cenfotec",
-      date: "Q2 2024",
-      description: [
-        "Created a health-focused system for at-risk individuals using NFC technology. Scanning a tag provided access to critical medical data, medications, and emergency contacts. Developed with .NET, SQL Server, Bootstrap and JavaScript.",
-      ],
-      iconBg: "#1F2937",
-    },
-    {
-      type: "project",
-      title: "Traffic Fines Management System (SMT)",
-      institution: "Universidad Cenfotec",
-      date: "Q3 2024",
-      description: [
-        "Built a comprehensive traffic fines management system supporting multiple user roles: clients, officers, administrators, and super admins. Integrated AI-based vehicle plate recognition using Python. Utilized .NET (ADO.NET, Entity Framework), React Vite, Tailwind, SQL Server, and MongoDB.",
-      ],
-      iconBg: "#008080",
-    },
-    {
-      type: "project",
-      title: "CenfoScore",
-      institution: "Universidad Cenfotec",
-      date: "Q1 2025",
-      description: [
-        "Developed a platform for students to rate and provide feedback on professors, helping peers make informed decisions when selecting courses. Built with FastAPI (Python), React, Next.js, Tailwind and TypeScript.",
-      ],
-      iconBg: "#1F2937",
-    },
-  ];
+    type: "project",
+    title: "Fairy Closet",
+    institution: "Freelancer",
+    date: "Q2 2024",
+    description: [],
+    iconBg: "#1F2937",
+  },
+  {
+    type: "project",
+    title: "JavaFy",
+    institution: "Universidad Cenfotec",
+    date: "Q2 2024",
+    description: [],
+    iconBg: "#008080",
+  },
+  {
+    type: "project",
+    title: "HealthTag",
+    institution: "Universidad Cenfotec",
+    date: "Q2 2024",
+    description: [],
+    iconBg: "#1F2937",
+  },
+  {
+    type: "project",
+    title: "Traffic Fines Management System (SMT)",
+    institution: "Universidad Cenfotec",
+    date: "Q3 2024",
+    description: [],
+    iconBg: "#008080",
+  },
+  {
+    type: "project",
+    title: "CenfoScore",
+    institution: "Universidad Cenfotec",
+    date: "Q1 2025",
+    description: [],
+    iconBg: "#1F2937",
+  },
+];
+
 
   const TimelineCard: React.FC<TimelineCardProps> = ({ data, index }) => (
     <VerticalTimelineElement

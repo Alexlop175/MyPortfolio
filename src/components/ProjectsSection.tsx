@@ -20,87 +20,88 @@ export default function ProjectsSection() {
     },
   };
 
-  const projectsData = [
-    {
-      title: "Voting System",
-      technologies: ["ADO.NET", "SQL Server", "JS"],
-      description:
-        "Developed an app to streamline student elections, reducing paper use, costs, and voting time.",
-      githubLink: "https://github.com/yourusername/voting-system",
-      image: "/projects/SV.jpg",
-    },
-    {
-      title: "Ecosecha",
-      technologies: ["Node.js", "MongoDB"],
-      description:
-        "Built a web platform to help Costa Rican farmers promote and sell produce online efficiently.",
-      githubLink: "https://github.com/yourusername/ecosecha",
-      image: "/projects/Ecosecha.png",
-    },
-    {
-      title: "JavaFy",
-      technologies: ["Java", "Swing", "MySQL"],
-      description:
-        "Created a desktop music player inspired by Spotify with playback and personal library features.",
-      githubLink: "https://github.com/yourusername/javafy",
-      image: "/projects/javafy.png",
-    },
-    {
-      title: "HealthTag",
-      technologies: [".NET", "SQL Server", "Bootstrap", "JS"],
-      description:
-        "Developed a health alert system using NFC to access key medical info in emergencies.",
-      githubLink: "https://github.com/yourusername/healthtag",
-      image: "/projects/HealthTag.jpg",
-    },
-    {
-      title: "SMT",
-      technologies: [
-        ".NET",
-        "React",
-        "Tailwind",
-        "SQL Server",
-        "MongoDB",
-        "Python (AI)",
-      ],
-      description:
-        "Designed a traffic fine system with user roles and AI-based license plate recognition.",
-      githubLink: "https://github.com/yourusername/smt",
-      image: "/projects/SMT.png",
-    },
-    {
-      title: "CenfoScore",
-      technologies: ["FastAPI", "React", "Next.js", "Tailwind", "TypeScript"],
-      description:
-        "Created a platform for students to rate professors and make informed course decisions.",
-      githubLink: "https://github.com/yourusername/cenfoscore",
-      image: "/projects/CenfoScore.png",
-    },
-    {
-      title: "Fairy Closet",
-      technologies: ["Node JS", "JavaScript", "MongoDB", "HBS", "CSS"],
-      description:
-        "Created an online store for handmade accessories, allowing its creator to showcase and sell her work.",
-      githubLink: "https://github.com/yourusername/fairycloset",
-      image: "/projects/FairyCloset.png",
-    },
-    {
-      title: "Volatir",
-      technologies: ["Node JS", "HTML", "CSS"],
-      description:
-        "Developed a business website for managing aerial and ground transportation rentals and reservations.",
-      githubLink: "https://github.com/yourusername/volatir",
-      image: "/projects/Volatir.png",
-    },
-    {
-      title: "Drive",
-      technologies: ["Dart", "Firebase", "Google Maps API"],
-      description:
-        "Mobile app that connects drivers and passengers with similar routes to save costs and reduce emissions.",
-      githubLink: "https://github.com/yourusername/drive-carpool",
-      image: "/projects/DriveU.jpeg",
-    },
-  ];
+const projectsData = [
+  {
+    title: "CenfoScore",
+    technologies: ["FastAPI", "React", "Next.js", "Tailwind", "TypeScript"],
+    description:
+      "Created a platform for students to rate professors and make informed course decisions.",
+    githubLink: "https://github.com/yourusername/cenfoscore",
+    image: "/projects/CenfoScore.png",
+  },
+  {
+    title: "SMT",
+    technologies: [
+      ".NET",
+      "React",
+      "Tailwind",
+      "SQL Server",
+      "MongoDB",
+      "Python (AI)",
+    ],
+    description:
+      "Designed a traffic fine system with user roles and AI-based license plate recognition.",
+    githubLink: "https://github.com/yourusername/smt",
+    image: "/projects/SMT.png",
+  },
+  {
+    title: "HealthTag",
+    technologies: [".NET", "SQL Server", "Bootstrap", "JS"],
+    description:
+      "Developed a health alert system using NFC to access key medical info in emergencies.",
+    githubLink: "https://github.com/yourusername/healthtag",
+    image: "/projects/HealthTag.jpg",
+  },
+  {
+    title: "JavaFy",
+    technologies: ["Java", "Swing", "MySQL"],
+    description:
+      "Created a desktop music player inspired by Spotify with playback and personal library features.",
+    githubLink: "https://github.com/yourusername/javafy",
+    image: "/projects/javafy.png",
+  },
+  {
+    title: "Fairy Closet",
+    technologies: ["Node JS", "JavaScript", "MongoDB", "HBS", "CSS"],
+    description:
+      "Created an online store for handmade accessories, allowing its creator to showcase and sell her work.",
+    githubLink: "https://github.com/yourusername/fairycloset",
+    image: "/projects/FairyCloset.png",
+  },
+  {
+    title: "Volatir",
+    technologies: ["Node JS", "HTML", "CSS"],
+    description:
+      "Developed a business website for managing aerial and ground transportation rentals and reservations.",
+    githubLink: "https://github.com/yourusername/volatir",
+    image: "/projects/Volatir.png",
+  },
+  {
+    title: "Ecosecha",
+    technologies: ["Node.js", "MongoDB"],
+    description:
+      "Built a web platform to help Costa Rican farmers promote and sell produce online efficiently.",
+    githubLink: "https://github.com/yourusername/ecosecha",
+    image: "/projects/Ecosecha.png",
+  },
+  {
+    title: "Drive",
+    technologies: ["Dart", "Firebase", "Google Maps API"],
+    description:
+      "Mobile app that connects drivers and passengers with similar routes to save costs and reduce emissions.",
+    githubLink: "https://github.com/yourusername/drive-carpool",
+    image: "/projects/DriveU.jpeg",
+  },
+  {
+    title: "Voting System",
+    technologies: ["ADO.NET", "SQL Server", "JS"],
+    description:
+      "Developed an app to streamline student elections, reducing paper use, costs, and voting time.",
+    githubLink: "https://github.com/yourusername/voting-system",
+    image: "/projects/SV.jpg",
+  },
+];
+
 
   return (
     <section className="bg-black py-16 px-4 sm:px-6 lg:px-8">
