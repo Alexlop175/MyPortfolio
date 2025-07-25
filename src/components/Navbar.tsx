@@ -13,17 +13,17 @@ type NavItemProps = {
 };
 
 const navItems: NavItemProps[] = [
-  { icon: Home, label: 'Inicio', href: '/' },
-  { icon: User, label: 'Sobre mí', href: '/about' },
-  { icon: Briefcase, label: 'Experiencia', href: '/experience' },
-  { icon: FolderKanban, label: 'Proyectos', href: '/projects' },
-  { icon: Mail, label: 'Contacto', href: '/contact' },
+  { icon: Home, label: 'Home', href: '/' },
+  { icon: User, label: 'About', href: '/about' },
+  { icon: Briefcase, label: 'Experience', href: '/experience' },
+  { icon: FolderKanban, label: 'Projects', href: '/projects' },
+  { icon: Mail, label: 'Contact', href: '/contact' },
 ];
 
 export default function FloatingNavbar() {
   const pathname = usePathname(); // <- Hook para obtener la ruta actual
   const [isClient, setIsClient] = useState(false);
-  const [isMenuVisible, setIsMenuVisible] = useState(true);
+  const [isMenuVisible, setIsMenuVisible] = useState(false);
 
   useEffect(() => {
     setIsClient(true);

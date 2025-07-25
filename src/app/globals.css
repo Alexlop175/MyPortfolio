@@ -7,6 +7,10 @@
   --foreground: black;
 }
 
+body{
+  background-color: #000000;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

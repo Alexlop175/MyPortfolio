@@ -106,7 +106,7 @@ const SocialMediaButton: React.FC = () => {
         </a>
 
         <a
-          href="/CV/Alexander López Sánchez CV Español.pdf"
+          href="/CV/AlexanderLopezCvEnglish.pdf"
           download
           className="inline-flex items-center gap-2 bg-neutral-800 hover:bg-neutral-700 text-white text-base font-medium py-2 px-5 rounded-full transition duration-200 shadow-md"
         >

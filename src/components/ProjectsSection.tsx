@@ -58,7 +58,7 @@ const projectsData = [
     description:
       "Created a desktop music player inspired by Spotify with playback and personal library features.",
     githubLink: "https://github.com/yourusername/javafy",
-    image: "/projects/javafy.png",
+    image: "/projects/Javafy.png",
   },
   {
     title: "Fairy Closet",
