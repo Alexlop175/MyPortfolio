@@ -57,7 +57,7 @@ const projectsData = [
     technologies: ["Java", "Swing", "MySQL"],
     description:
       "Created a desktop music player inspired by Spotify with playback and personal library features.",
-    githubLink: "https://github.com/yourusername/javafy",
+    githubLink: "https://github.com/Alexlop175/javafy",
     image: "/projects/Javafy.png",
   },
   {
@@ -81,7 +81,7 @@ const projectsData = [
     technologies: ["Node.js", "MongoDB"],
     description:
       "Built a web platform to help Costa Rican farmers promote and sell produce online efficiently.",
-    githubLink: "https://github.com/yourusername/ecosecha",
+    githubLink: "https://github.com/Alexlop175/ecosecha",
     image: "/projects/Ecosecha.png",
   },
   {
@@ -97,7 +97,7 @@ const projectsData = [
     technologies: ["ADO.NET", "SQL Server", "JS"],
     description:
       "Developed an app to streamline student elections, reducing paper use, costs, and voting time.",
-    githubLink: "https://github.com/yourusername/voting-system",
+    githubLink: "https://github.com/Alexlop175/voting-system",
     image: "/projects/SV.jpg",
   },
 ];
